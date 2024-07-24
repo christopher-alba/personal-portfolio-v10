@@ -10,7 +10,7 @@ export type Company = {
 };
 export type Companies = Company[];
 
-export const data: Companies = [
+export const work: Companies = [
   {
     summary:
       "As a software engineer, I am responsible for creating and maintaining frontend, and backend web applications. I have touched some aspects of Artificial Intelligence, and have designed some UI/UX flows on Figma, which were then implemented in production applications.",
@@ -134,5 +134,49 @@ export const data: Companies = [
       "Photoshop",
     ],
     website: "https://devacademy.co.nz/",
+  },
+];
+
+type Technology = {
+  name: string;
+  confidence: number;
+};
+
+export const technologies: Technology[] = [
+  {
+    name: "HTML",
+    confidence: 100 / 100,
+  },
+  {
+    name: "Javascript",
+    confidence: 100 / 100,
+  },
+  {
+    name: "CSS",
+    confidence: 100 / 100,
+  },
+  {
+    name: "Typescript",
+    confidence: 100 / 100,
+  },
+  {
+    name: "React",
+    confidence: 100 / 100,
+  },
+  {
+    name: "Angular",
+    confidence: 90 / 100,
+  },
+  {
+    name: "Cypress",
+    confidence: 80 / 100,
+  },
+  {
+    name: "ASP.NET / C#",
+    confidence: 70 / 100,
+  },
+  {
+    name: "PostgresQL",
+    confidence: 60 / 100,
   },
 ];

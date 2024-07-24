@@ -1,9 +1,11 @@
 import { FC, useContext } from "react";
 import { DefaultTheme, ThemeContext } from "styled-components";
 import themes from "../../themes/schema.json";
-import { InnerDiv, NavbarDivMain, ThemeButton } from "./styled";
+import { Anchor, InnerDiv, LinksWrapper, NavbarDivMain, ThemeButton, ThemeText, TitleStyled } from "./styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { Container } from "../container";
+import { Title } from "../title";
 
 const Navbar: FC<{ setTheme: (defaultTheme: DefaultTheme) => void }> = ({
   setTheme,
@@ -20,15 +22,30 @@ const Navbar: FC<{ setTheme: (defaultTheme: DefaultTheme) => void }> = ({
   };
   return (
     <NavbarDivMain>
-      <InnerDiv>
-        <ThemeButton onClick={toggleTheme}>
-          {theme?.name === "light" ? (
-            <FontAwesomeIcon icon={faMoon} />
-          ) : (
-            <FontAwesomeIcon icon={faSun} />
-          )}
-        </ThemeButton>
-      </InnerDiv>
+      <Container>
+        <InnerDiv>
+          <TitleStyled>Chris.A</TitleStyled>
+          <LinksWrapper>
+            <Anchor>#About</Anchor>
+            <Anchor>#Career</Anchor>
+            <Anchor>#Projects</Anchor>
+          </LinksWrapper>
+          <ThemeButton onClick={toggleTheme}>
+            {theme?.name === "light" && (
+              <>
+                <ThemeText>Dark Mode</ThemeText>
+                <FontAwesomeIcon icon={faMoon} />
+              </>
+            )}
+            {theme?.name === "dark" && (
+              <>
+                <ThemeText>Light Mode</ThemeText>
+                <FontAwesomeIcon icon={faSun} />
+              </>
+            )}
+          </ThemeButton>
+        </InnerDiv>
+      </Container>
     </NavbarDivMain>
   );
 };

@@ -16,6 +16,10 @@ export const ServicesWrapper = styled.div`
 `;
 
 export const DividerWrapper = styled.div`
+  margin-top: 200px;
+`;
+
+export const DividerOverlay = styled.div`
   display: flex;
   position: relative;
 `;
@@ -28,6 +32,7 @@ export const TitleBlock = styled.div`
   width: 60vw;
   padding-right: 10vw;
   color: ${({ theme }) => theme.colors.primary1};
+  background: ${({ theme }) => theme.colors.tertiary1};
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import themes from "./themes/schema.json";
 import { GlobalStyles } from "./themes/globalStyles";
 import Landing from "./Sections/Landing/Landing";
-import Navbar from "./components/Navbar/Navbar";
 import Services from "./Sections/Services/Services";
 import Career from "./Sections/Career/Career";
 import gsap from "gsap";
@@ -55,8 +54,7 @@ function App() {
       <ParallaxProvider>
         <ThemeProvider theme={theme}>
           <GlobalStyles />
-          <Navbar setTheme={setTheme} />
-          <Landing />
+          <Landing setTheme={setTheme}/>
           <Services />
           <Career />
         </ThemeProvider>
