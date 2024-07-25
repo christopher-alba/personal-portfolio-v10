@@ -24,14 +24,6 @@ const Landing: FC<{ setTheme: (defaultTheme: DefaultTheme) => void }> = ({
   const theme = useContext(ThemeContext) as DefaultTheme;
   return (
     <div>
-      <Container>
-        <NameWrapper>
-          <TitleStyled>Christopher Alba.</TitleStyled>
-          <SubTitleStyledThin>Hi there! My name is.</SubTitleStyledThin>
-          <SubTitleStyled>Welcome to my website.</SubTitleStyled>
-        </NameWrapper>
-      </Container>
-      <Navbar setTheme={setTheme} />
       <BackgroundDiv>
         <BackgroundOverlay>
           <Container>
@@ -53,9 +45,7 @@ const Landing: FC<{ setTheme: (defaultTheme: DefaultTheme) => void }> = ({
                 </Anchor>
                 <Button>What can I offer your business?</Button>
               </InfoContent>
-              <InfoContentRightAligned>
-               
-              </InfoContentRightAligned>
+              <InfoContentRightAligned></InfoContentRightAligned>
             </InfoWrapper>
           </Container>
         </BackgroundOverlay>

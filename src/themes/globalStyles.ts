@@ -11,22 +11,6 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.colors.secondary1} !important;
     font-family: "Inter", sans-serif;
     margin:0;
-    &::-webkit-scrollbar-track
-    {
-      background-color: ${({ theme }) => theme.colors.secondary1};
-    }
-
-    &::-webkit-scrollbar
-    {
-      width: 15px;
-      background-color: ${({ theme }) => theme.colors.secondary1};
-    }
-    &::-webkit-scrollbar-thumb
-      {
-          background-color: ${({ theme }) => theme.colors.primary1};;
-          border-radius:10px;
-          border: 3px solid ${({ theme }) => theme.colors.secondary1};
-      }
   }
   button {
     font-family: "Inter", Helvetica, sans-serif;

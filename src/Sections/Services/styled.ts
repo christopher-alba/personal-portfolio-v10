@@ -1,49 +1,52 @@
 import styled from "styled-components";
 import people from "../../assets/svg/people.svg?react";
 import person from "../../assets/svg/person.svg?react";
-import HexagonPattern1 from "../../assets/svg-components/HexagonPattern1";
 
-export const ServicesWrapper = styled.div`
-  position: relative;
+export const SkillsWrapper = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  flex-direction: column;
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  margin-bottom: 100px;
 `;
 
-export const DividerWrapper = styled.div`
-  margin-top: 200px;
-`;
-
-export const DividerOverlay = styled.div`
-  display: flex;
-  position: relative;
-`;
-
-export const TitleBlock = styled.div`
-  position: sticky;
-  top: 0;
-  opacity: 1;
-  height: 100vh;
-  width: 60vw;
-  padding-right: 10vw;
-  color: ${({ theme }) => theme.colors.primary1};
-  background: ${({ theme }) => theme.colors.tertiary1};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+export const SkillWrapper = styled.div`
+  flex-grow: 1;
+  padding: 50px;
   box-sizing: border-box;
-  overflow: hidden;
-  clip-path: polygon(75% 0, 100% 50%, 75% 100%, 0 100%, 0 0);
+  border-right: 1px solid ${({ theme }) => theme.colors.secondary1 + "33"};
+  &:last-of-type {
+    border-right: none;
+  }
+  @media (max-width: 1700px) {
+    border: none;
+  }
 `;
 
-export const ContentBlock = styled.div`
-  width: 50vw;
+export const DescriptionWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  padding-top: 100px;
+`;
+
+export const Description = styled.div`
+  flex-grow: 1;
+  max-width: 50%;
+  min-width: 300px;
+  flex: 1;
+  text-align: center;
+  padding: 50px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  @media (max-width: 1000px) {
+    max-width: 100%;
+    padding: 25px;
+  }
+`;
+
+export const DescriptionBackground = styled.div`
+  background: ${({ theme }) => theme.colors.primary2};
+  clip-path: polygon(50% 10%, 79% 0, 100% 0, 100% 91%, 79% 91%, 50% 100%, 21% 91%, 0 91%, 0 0, 21% 0);  padding: 200px 0;
 `;
 
 export const PeopleSVG = styled(people)`
@@ -62,27 +65,4 @@ export const PersonSVG = styled(person)`
     transform: scale(1.1);
   }
   transition: 500ms;
-`;
-
-export const HexPattern = styled(HexagonPattern1)`
-  width: 100vw;
-  height: 150vh;
-  position: absolute;
-  top: -25%;
-  left: -25%;
-  z-index: -1;
-`;
-
-export const AnchorButton = styled.a`
-  white-space: nowrap;
-  background: ${({ theme }) => theme.colors.secondary1};
-  color: ${({ theme }) => theme.colors.primary1};
-  padding: 10px 50px;
-  border-radius: 5px;
-  margin-top: 50px;
-  text-decoration: none;
-  cursor: pointer;
-  &:hover {
-    background: ${({ theme }) => theme.colors.secondary3};
-  }
 `;

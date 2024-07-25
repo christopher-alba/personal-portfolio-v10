@@ -8,6 +8,9 @@ import Career from "./Sections/Career/Career";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ParallaxProvider } from "react-scroll-parallax";
+import { Container } from "./components/container";
+import Navbar from "./components/Navbar/Navbar";
+import { NameWrapper, SubTitleStyledThin, SubTitleStyled , TitleStyled} from "./Sections/Landing/styled";
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
@@ -28,7 +31,7 @@ function App() {
   };
 
   useEffect(() => {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     const localTheme: DefaultTheme | null = JSON.parse(
       localStorage.getItem("theme") ?? "{}"
     ) as DefaultTheme | null;
@@ -54,7 +57,15 @@ function App() {
       <ParallaxProvider>
         <ThemeProvider theme={theme}>
           <GlobalStyles />
-          <Landing setTheme={setTheme}/>
+          <Container>
+            <NameWrapper>
+              <TitleStyled>Christopher Alba.</TitleStyled>
+              <SubTitleStyledThin>Hi there! My name is.</SubTitleStyledThin>
+              <SubTitleStyled>Welcome to my website.</SubTitleStyled>
+            </NameWrapper>
+          </Container>
+          <Navbar setTheme={setTheme} />
+          <Landing setTheme={setTheme} />
           <Services />
           <Career />
         </ThemeProvider>

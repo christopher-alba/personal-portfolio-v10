@@ -141,9 +141,11 @@ export const BackgroundDiv = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: center;
-  background-position-y: 20vh;
+  background-position-y: 11vh;
   height: 70vh;
   position: relative;
+  clip-path: polygon(50% 0%, 79% 0, 100% 0, 100% 91%, 79% 91%, 50% 100%, 21% 91%, 0 91%, 0 0, 21% 0);  padding: 200px 0;
+
 `;
 
 export const BackgroundOverlay = styled.div`
