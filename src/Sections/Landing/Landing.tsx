@@ -1,6 +1,5 @@
-import { FC, useContext } from "react";
-import { DefaultTheme, ThemeContext } from "styled-components";
-import Navbar from "../../components/Navbar/Navbar";
+import { FC } from "react";
+import { DefaultTheme } from "styled-components";
 import { Container } from "../../components/container";
 import {
   Anchor,
@@ -11,17 +10,10 @@ import {
   InfoContent,
   InfoContentRightAligned,
   InfoWrapper,
-  NameWrapper,
-  SubTitleStyled,
-  SubTitleStyledThin,
   SummaryText,
-  TitleStyled,
 } from "./styled";
 
-const Landing: FC<{ setTheme: (defaultTheme: DefaultTheme) => void }> = ({
-  setTheme,
-}) => {
-  const theme = useContext(ThemeContext) as DefaultTheme;
+const Landing: FC<{ setTheme: (defaultTheme: DefaultTheme) => void }> = () => {
   return (
     <div>
       <BackgroundDiv>
