@@ -32,7 +32,7 @@ export const TimelineCardsWrapper = styled.div`
 export const CareerWrapper = styled.div`
   padding-bottom: 200px;
   padding: 200px 0;
-  padding-top: 0;
+  padding-top: 100px;
   position: relative;
   top: -1px;
   background: ${({ theme }) => theme.colors.primary2};

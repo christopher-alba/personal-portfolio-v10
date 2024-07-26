@@ -5,8 +5,8 @@ import person from "../../assets/svg/person.svg?react";
 export const SkillsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  padding-top: 250px;
+  padding-bottom: 250px;
 `;
 
 export const SkillWrapper = styled.div`

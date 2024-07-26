@@ -47,11 +47,15 @@ export const ProgressWrapper = styled.div`
   align-items: center;
   justify-content: start;
   margin-bottom: 30px;
+  overflow: hidden;
 `;
-
-export const Progress = styled.div`
+interface props {
+  width: string;
+}
+export const Progress = styled.div<props>`
   background: ${({ theme }) => theme.colors.tertiary1};
   height: 10px;
+  width: ${({ width }) => width};
 `;
 
 export const SkillsWrapper = styled.div`

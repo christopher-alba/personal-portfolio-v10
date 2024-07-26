@@ -43,7 +43,7 @@ const Career: FC = () => {
   }, [containerRef, cardsWrapperRef]);
 
   return (
-    <CareerWrapper>
+    <CareerWrapper id="career">
       <TimelineWrapper>
         <Timeline />
         <Container id="bounds" ref={containerRef}>

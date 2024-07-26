@@ -12,14 +12,31 @@ import {
   InfoWrapper,
   SummaryText,
 } from "./styled";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Landing: FC<{ setTheme: (defaultTheme: DefaultTheme) => void }> = () => {
+  useGSAP(() => {
+    gsap
+      .timeline()
+      .from("#background-overlay", {
+        opacity: 0,
+        delay: 1,
+        duration: 1.5,
+        ease: "none",
+      })
+      .from("#info-wrapper", {
+        opacity: 0,
+        duration: 1.5,
+        ease: "none",
+      });
+  }, []);
   return (
     <div>
       <BackgroundDiv>
-        <BackgroundOverlay>
+        <BackgroundOverlay id="background-overlay">
           <Container>
-            <InfoWrapper>
+            <InfoWrapper id="info-wrapper">
               <InfoContent>
                 <SummaryText>
                   I’m a <Highlight>software engineer</Highlight> at Turners
@@ -35,7 +52,15 @@ const Landing: FC<{ setTheme: (defaultTheme: DefaultTheme) => void }> = () => {
                 >
                   CONTACT ME
                 </Anchor>
-                <Button>What can I offer your business?</Button>
+                <Button
+                  onClick={() =>
+                    document
+                      .getElementById("skills")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                >
+                  What can I offer your business?
+                </Button>
               </InfoContent>
               <InfoContentRightAligned></InfoContentRightAligned>
             </InfoWrapper>

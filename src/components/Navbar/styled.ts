@@ -53,6 +53,7 @@ export const ThemeText = styled.span`
 export const TitleStyled = styled(Title)`
   font-size: 2rem;
   font-family: "Italianno";
+  cursor: pointer;
   @media (max-width: 900px) {
     display: none;
   }

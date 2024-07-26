@@ -11,10 +11,23 @@ import {
   SkillsWrapper,
   SkillWrapper,
 } from "./styled";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
 const Services: FC = () => {
+  useGSAP(() => {
+    gsap.from("#descriptions", {
+      opacity: 0,
+      duration: 1.5,
+      scrollTrigger: {
+        trigger: "#descriptions-wrapper",
+        start: "40% bottom",
+      },
+    });
+  }, []);
   return (
     <>
-      <Container>
+      <Container id="skills">
         <SkillsWrapper>
           <SkillWrapper>
             <SkillsDisplay
@@ -39,9 +52,9 @@ const Services: FC = () => {
           </SkillWrapper>
         </SkillsWrapper>
       </Container>
-      <DescriptionBackground>
+      <DescriptionBackground id="descriptions-wrapper">
         <Container>
-          <DescriptionWrapper>
+          <DescriptionWrapper id="descriptions">
             <Description>
               <PeopleSVG />
               <h2>Working in a team.</h2>

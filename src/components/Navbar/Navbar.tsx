@@ -1,7 +1,15 @@
 import { FC, useContext } from "react";
 import { DefaultTheme, ThemeContext } from "styled-components";
 import themes from "../../themes/schema.json";
-import { Anchor, InnerDiv, LinksWrapper, NavbarDivMain, ThemeButton, ThemeText, TitleStyled } from "./styled";
+import {
+  Anchor,
+  InnerDiv,
+  LinksWrapper,
+  NavbarDivMain,
+  ThemeButton,
+  ThemeText,
+  TitleStyled,
+} from "./styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { Container } from "../container";
@@ -23,11 +31,35 @@ const Navbar: FC<{ setTheme: (defaultTheme: DefaultTheme) => void }> = ({
     <NavbarDivMain>
       <Container>
         <InnerDiv>
-          <TitleStyled>Chris.A</TitleStyled>
+          <TitleStyled
+            tabIndex={0}  
+            onClick={() =>
+              document
+                .getElementById("landing-name")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            Chris.A
+          </TitleStyled>
           <LinksWrapper>
-            <Anchor>#About</Anchor>
-            <Anchor>#Career</Anchor>
-            <Anchor>#Projects</Anchor>
+            <Anchor
+              onClick={() =>
+                document
+                  .getElementById("skills")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              #About
+            </Anchor>
+            <Anchor
+              onClick={() =>
+                document
+                  .getElementById("career")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              #Career
+            </Anchor>
           </LinksWrapper>
           <ThemeButton onClick={toggleTheme}>
             {theme?.name === "light" && (

@@ -5,7 +5,7 @@ export const NameWrapper = styled.div`
   display: flex;
   align-items: end;
   justify-content: space-between;
-  margin-top: 15vh;
+  padding-top: 15vh;
   margin-bottom: 5vh;
   @media (max-width: 800px) {
     flex-direction: column;

@@ -10,7 +10,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { Container } from "./components/container";
 import Navbar from "./components/Navbar/Navbar";
-import { NameWrapper, SubTitleStyledThin, SubTitleStyled , TitleStyled} from "./Sections/Landing/styled";
+import {
+  NameWrapper,
+  SubTitleStyledThin,
+  SubTitleStyled,
+  TitleStyled,
+} from "./Sections/Landing/styled";
+import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
@@ -19,6 +25,14 @@ function App() {
       ? JSON.parse(localStorage.getItem("theme") as string)
       : themes.light
   );
+
+  useGSAP(() => {
+    gsap.timeline().from("#landing-name", {
+      opacity: 0,
+      duration: 1.5,
+      ease: "none",
+    });
+  }, []);
 
   const updateTheme = (themeName: string) => {
     if (themeName === "light") {
@@ -31,7 +45,6 @@ function App() {
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     const localTheme: DefaultTheme | null = JSON.parse(
       localStorage.getItem("theme") ?? "{}"
     ) as DefaultTheme | null;
@@ -58,7 +71,7 @@ function App() {
         <ThemeProvider theme={theme}>
           <GlobalStyles />
           <Container>
-            <NameWrapper>
+            <NameWrapper id="landing-name">
               <TitleStyled>Christopher Alba.</TitleStyled>
               <SubTitleStyledThin>Hi there! My name is.</SubTitleStyledThin>
               <SubTitleStyled>Welcome to my website.</SubTitleStyled>
