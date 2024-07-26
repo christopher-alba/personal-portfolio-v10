@@ -46,7 +46,7 @@ export const Description = styled.div`
 
 export const DescriptionBackground = styled.div`
   background: ${({ theme }) => theme.colors.primary2};
-  clip-path: polygon(50% 10%, 79% 0, 100% 0, 100% 91%, 79% 91%, 50% 100%, 21% 91%, 0 91%, 0 0, 21% 0);  padding: 200px 0;
+  clip-path: polygon(50% 10%, 79% 0, 100% 0, 100% 100%, 79% 100%, 50% 100%, 21% 100%, 0 100%, 0 0, 21% 0);  padding: 200px 0;
 `;
 
 export const PeopleSVG = styled(people)`

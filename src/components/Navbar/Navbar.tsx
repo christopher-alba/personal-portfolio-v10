@@ -5,7 +5,6 @@ import { Anchor, InnerDiv, LinksWrapper, NavbarDivMain, ThemeButton, ThemeText, 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { Container } from "../container";
-import { Title } from "../title";
 
 const Navbar: FC<{ setTheme: (defaultTheme: DefaultTheme) => void }> = ({
   setTheme,
